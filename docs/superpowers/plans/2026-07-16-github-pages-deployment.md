@@ -63,7 +63,7 @@ Set `base` to `/fourier-learning-site/` and add a workflow that checks out `mast
 
 Run: `pnpm test && pnpm build`
 
-Expected: 21 tests pass and the Vite production build completes successfully.
+Expected: 22 tests pass and the Vite production build completes successfully.
 
 - [ ] **Step 5: Commit**
 
