@@ -4,7 +4,7 @@ import react from '@vitejs/plugin-react';
 import { configDefaults } from 'vitest/config';
 
 export default defineConfig({
-  base: './',
+  base: '/fourier-learning-site/',
   plugins: [react()],
   test: {
     environment: 'jsdom',
