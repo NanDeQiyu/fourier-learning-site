@@ -3,7 +3,7 @@ import { loadProgress, saveProgress } from './progress';
 
 describe('progress', () => {
   it('存储数据损坏时返回默认进度', () => {
-    const storage = { getItem: () => '{bad json' } as Storage;
+    const storage = { getItem: () => '{bad json' } as unknown as Storage;
 
     expect(loadProgress(storage)).toEqual({ currentChapter: 'signal', completed: [] });
   });
@@ -11,7 +11,7 @@ describe('progress', () => {
   it('校验进度并过滤非字符串完成项', () => {
     const storage = {
       getItem: () => JSON.stringify({ version: 1, currentChapter: 'transform', completed: ['signal', 4] }),
-    } as Storage;
+    } as unknown as Storage;
 
     expect(loadProgress(storage)).toEqual({ currentChapter: 'transform', completed: ['signal'] });
   });
